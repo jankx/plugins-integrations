@@ -1,0 +1,22 @@
+{
+    "name": "jankx/plugins-integrations",
+    "description": "Make compatible with other premium WordPress plugins",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "suggest": {
+    	"jankx/core": "This plugin only working with Jankx Framework"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Jankx\\Plugin\\Integration\\": "src/"
+    	}
+    }
+}
