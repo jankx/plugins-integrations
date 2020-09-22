@@ -12,11 +12,14 @@
     "minimum-stability": "dev",
     "require": {},
     "suggest": {
-    	"jankx/core": "This plugin only working with Jankx Framework"
+        "jankx/core": "This plugin only working with Jankx Framework"
     },
     "autoload": {
-    	"psr-4": {
-    		"Jankx\\Plugin\\Integration\\": "src/"
-    	}
+        "psr-4": {
+            "Jankx\\Plugin\\Integration\\": "src/"
+        },
+        "files": [
+            "./jankx-plugins-integrations.php"
+        ]
     }
 }
