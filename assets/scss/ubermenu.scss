@@ -1,0 +1,27 @@
+.ubermenu-vertial-open {
+    .jankx-integrate-ubermenu--vertical {
+        display: block;
+    }
+}
+
+.ubermenu-force-show {
+    .jankx-integrate-ubermenu--vertical {
+        display: block;
+    }
+}
+
+.jankx-integrate-ubermenu--vertical {
+    display: none;
+    .jankx-container {
+        position: relative;
+    }
+    .ubermenu {
+        position: absolute;
+        top: 0;
+        z-index: 99;
+    }
+}
+
+.ubermenu-vertical .ubermenu-item > .ubermenu-submenu-type-mega {
+
+}

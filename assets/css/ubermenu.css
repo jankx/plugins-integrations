@@ -1,0 +1,19 @@
+.ubermenu-vertial-open .jankx-integrate-ubermenu--vertical {
+  display: block;
+}
+
+.ubermenu-force-show .jankx-integrate-ubermenu--vertical {
+  display: block;
+}
+
+.jankx-integrate-ubermenu--vertical {
+  display: none;
+}
+.jankx-integrate-ubermenu--vertical .jankx-container {
+  position: relative;
+}
+.jankx-integrate-ubermenu--vertical .ubermenu {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
