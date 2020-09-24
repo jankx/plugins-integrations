@@ -5,7 +5,7 @@ use Jankx\Plugin\Integration\Plugins\UberMenu;
 
 class PluginIntegrationManager
 {
-    const VERSION = '0.0.4';
+    const VERSION = '0.0.5';
 
     protected static $instance;
 

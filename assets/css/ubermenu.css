@@ -2,10 +2,6 @@
   display: block;
 }
 
-.ubermenu-force-show .jankx-integrate-ubermenu--vertical {
-  display: block;
-}
-
 .jankx-integrate-ubermenu--vertical {
   display: none;
 }
@@ -16,4 +12,10 @@
   position: absolute;
   top: 0;
   z-index: 99;
+}
+
+@media (min-width: 998px) {
+  .ubermenu-force-show .jankx-integrate-ubermenu--vertical {
+    display: block;
+  }
 }

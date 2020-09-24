@@ -4,12 +4,6 @@
     }
 }
 
-.ubermenu-force-show {
-    .jankx-integrate-ubermenu--vertical {
-        display: block;
-    }
-}
-
 .jankx-integrate-ubermenu--vertical {
     display: none;
     .jankx-container {
@@ -24,4 +18,12 @@
 
 .ubermenu-vertical .ubermenu-item > .ubermenu-submenu-type-mega {
 
+}
+
+@media(min-width: 998px) {
+    .ubermenu-force-show {
+        .jankx-integrate-ubermenu--vertical {
+            display: block;
+        }
+    }
 }
