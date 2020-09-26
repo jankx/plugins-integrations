@@ -5,7 +5,8 @@ use Jankx\Plugin\Integration\PluginIntegrationManager;
 
 class UberMenu
 {
-    const VERTICAL_MENU_LOCATION = 'vertical_ubermenu';
+    const VERTICAL_MENU_LOCATION = 'vertical_menu';
+    const VERTICAL_ITEM_TYPE = 'vertical_ubermenu';
 
     public function __construct()
     {
@@ -26,7 +27,7 @@ class UberMenu
     public function registerNewMenuLocations($menus)
     {
         $menus = array_merge($menus, array(
-            'vertical_menu' => __('Veritical Menu', 'jankx-plugins-integrations')
+            static::VERTICAL_MENU_LOCATION => __('Veritical Menu', 'jankx-plugins-integrations')
         ));
 
         return $menus;
@@ -35,7 +36,7 @@ class UberMenu
     public function addToJankxMenuItems($items)
     {
         $items = array_merge($items, array(
-            static::VERTICAL_MENU_LOCATION => __('Vertical UberMenu', 'jankx-plugins-integrations'),
+            static::VERTICAL_ITEM_TYPE => __('Vertical UberMenu', 'jankx-plugins-integrations'),
         ));
 
         return $items;
@@ -50,7 +51,7 @@ class UberMenu
 
     public function renderMenuItem($item_output, $item, $depth, $args)
     {
-        if ($item->type === 'vertical_ubermenu') {
+        if ($item->type === static::VERTICAL_ITEM_TYPE) {
             add_action('jankx_template_after_header', array($this, 'renderUberMenuAfterHeader'), 11);
 
             $item_output = ubermenu_toggle('jankx-ubermenu-vertical-menu', 'main', false, array(
@@ -68,7 +69,7 @@ class UberMenu
         jankx_open_container();
 
         ubermenu('main', array(
-            'theme_location' => 'vertical_menu',
+            'theme_location' => static::VERTICAL_MENU_LOCATION,
             'target' => 'jankx-ubermenu-vertical-menu',
         ));
 
@@ -77,8 +78,31 @@ class UberMenu
         echo '</div>';
     }
 
+    protected function hasVerticalMenuItem()
+    {
+        $locations = get_nav_menu_locations();
+
+        $submenu = wp_get_nav_menu_object($locations['secondary']);
+
+        $menu_items = wp_get_nav_menu_items($submenu->name);
+
+        foreach ($menu_items as $menu_item) {
+            if ($menu_item->type === static::VERTICAL_ITEM_TYPE) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function appendOpenVerticalMenuClass($classes)
     {
+        if (!$this->hasVerticalMenuItem()) {
+            return $classes;
+        }
+
+        
+
         if (apply_filters('jankx_plugins_integrations_uber_force_show', false)) {
             $classes[] = 'ubermenu-force-show';
         }
