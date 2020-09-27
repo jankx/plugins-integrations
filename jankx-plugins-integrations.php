@@ -25,4 +25,4 @@ if (!function_exists('jankx_plugins_inegrations')) {
     }
 }
 
-$GLOBALS['jankx_plugins_inegrations'] = &jankx_plugins_inegrations();
+$GLOBALS['jankx_plugins_inegrations'] = jankx_plugins_inegrations();
