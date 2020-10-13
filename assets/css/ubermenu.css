@@ -1,3 +1,10 @@
+/**
+ * Module Name: Ubermenu
+ * Author: Puleeno Nguyen
+ * Author URI: https://puleeno.com
+ * Version: 0.0.6.1
+ */
+
 .ubermenu-vertial-open .jankx-integrate-ubermenu--vertical {
   display: block;
 }
@@ -17,5 +24,13 @@
 @media (min-width: 998px) {
   .ubermenu-force-show .jankx-integrate-ubermenu--vertical {
     display: block;
+  }
+
+  .jankx-integrate-ubermenu--vertical .ubermenu .ubermenu-nav {
+    width: 230px;
+  }
+
+  .ubermenu-force-show #jankx-main-content .elementor-section-wrap .elementor-section:first-child .elementor-row{
+    padding-left: 230px;
   }
 }

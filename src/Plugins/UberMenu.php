@@ -109,11 +109,15 @@ class UberMenu
 
     public function registerAssets($deps)
     {
+        $ubermenuStyle = sprintf('%s/assets/css/ubermenu.css', dirname(JANKX_PLUGIN_INTEGRATION_BUNDLES_LOADER));
+        $uberMetadata  = get_file_data($ubermenuStyle, array(
+            'version' => 'Version',
+        ));
         css(
             'jankx-ubermenu-integrate',
             jankx_plugins_integration_asset_url('css/ubermenu.css'),
             array(),
-            PluginIntegrationManager::VERSION
+            $uberMetadata['version'] ? $uberMetadata['version'] : PluginIntegrationManager::VERSION
         );
         array_push($deps, 'jankx-ubermenu-integrate');
 

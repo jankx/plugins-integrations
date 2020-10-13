@@ -5,7 +5,7 @@
  * Author: Puleeno Nguyen
  * Author URI: https://puleeno.com
  * Description:  Make compatible with other premium WordPress plugins
- * Version:1.0.0
+ * Version: 1.0.0.2
  */
 
 define('JANKX_PLUGIN_INTEGRATION_BUNDLES_LOADER', __FILE__);
