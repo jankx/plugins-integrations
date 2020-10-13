@@ -52,7 +52,7 @@ class UberMenu
     public function renderMenuItem($item_output, $item, $depth, $args)
     {
         if ($item->type === static::VERTICAL_ITEM_TYPE) {
-            add_action('jankx_template_after_header', array($this, 'renderUberMenuAfterHeader'), 11);
+            add_action('jankx_template_after_header', array($this, 'renderUberMenuAfterHeader'), 31);
 
             $item_output = ubermenu_toggle('jankx-ubermenu-vertical-menu', 'main', false, array(
                 'icon_class' => 'rocket',
@@ -81,9 +81,10 @@ class UberMenu
     protected function hasVerticalMenuItem()
     {
         $locations = get_nav_menu_locations();
-
-        $submenu = wp_get_nav_menu_object($locations['secondary']);
-
+        $submenu   = wp_get_nav_menu_object($locations[apply_filters(
+            'jankx_plugin_integrate_ubermenu_location',
+            'secondary'
+        )]);
         $menu_items = wp_get_nav_menu_items($submenu->name);
 
         foreach ($menu_items as $menu_item) {
@@ -91,7 +92,6 @@ class UberMenu
                 return true;
             }
         }
-
         return false;
     }
 
@@ -100,9 +100,6 @@ class UberMenu
         if (!$this->hasVerticalMenuItem()) {
             return $classes;
         }
-
-        
-
         if (apply_filters('jankx_plugins_integrations_uber_force_show', false)) {
             $classes[] = 'ubermenu-force-show';
         }
