@@ -2,7 +2,7 @@
  * Module Name: Ubermenu
  * Author: Puleeno Nguyen
  * Author URI: https://puleeno.com
- * Version: 0.0.6.2
+ * Version: 0.0.6.4
  */
 
 .ubermenu-vertial-open .jankx-integrate-ubermenu--vertical {
@@ -11,7 +11,6 @@
 
 .jankx-integrate-ubermenu--vertical {
   display: none;
-  margin-left: 10px;
 }
 .jankx-integrate-ubermenu--vertical .jankx-container {
   position: relative;
