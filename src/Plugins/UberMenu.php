@@ -67,12 +67,12 @@ class UberMenu
         echo '<div class="jankx-integrate-ubermenu--vertical">';
 
         jankx_open_container();
-
+        add_filter('ubermenu_op', array($this, 'overrideOrientation'), 10, 3);
         ubermenu('main', array(
             'theme_location' => static::VERTICAL_MENU_LOCATION,
             'target' => 'jankx-ubermenu-vertical-menu',
         ));
-
+        remove_filter('ubermenu_op', array($this, 'overrideOrientation'), 10, 3);
         jankx_close_container();
 
         echo '</div>';
@@ -122,5 +122,13 @@ class UberMenu
         array_push($deps, 'jankx-ubermenu-integrate');
 
         return $deps;
+    }
+
+    public function overrideOrientation($val, $option, $section)
+    {
+        if ($option === 'orientation') {
+            return 'vertical';
+        }
+        return $val;
     }
 }
