@@ -2,7 +2,7 @@
  * Module Name: Ubermenu
  * Author: Puleeno Nguyen
  * Author URI: https://puleeno.com
- * Version: 0.0.6.4
+ * Version: 0.0.6.5
  */
 
 .ubermenu-vertial-open .jankx-integrate-ubermenu--vertical {
@@ -11,6 +11,9 @@
 
 .jankx-integrate-ubermenu--vertical {
   display: none;
+}
+.jankx-integrate-ubermenu--vertical.show {
+  display: block;
 }
 .jankx-integrate-ubermenu--vertical .jankx-container {
   position: relative;
@@ -30,6 +33,7 @@
     width: 230px;
   }
 
+  /* This rules for Elementor plugin */
   .ubermenu-force-show #jankx-main-content .elementor-section-wrap .elementor-section:first-child .elementor-row{
     padding-left: 230px;
   }

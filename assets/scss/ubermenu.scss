@@ -6,6 +6,9 @@
 
 .jankx-integrate-ubermenu--vertical {
     display: none;
+    &.show {
+        display: block;
+    }
     .jankx-container {
         position: relative;
     }

@@ -76,6 +76,8 @@ class UberMenu
         jankx_close_container();
 
         echo '</div>';
+
+        execute_script('');
     }
 
     protected function hasVerticalMenuItem()
