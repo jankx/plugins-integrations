@@ -1,11 +1,25 @@
-.ubermenu-vertial-open {
-    .jankx-integrate-ubermenu--vertical {
-        display: block;
+/**
+ * Version: 0.0.39
+ */
+body.ubermenu-force-show:not(.jankx-base) > :not(.main-content-sidebar) .jankx-integrate-ubermenu--vertical .jankx-container {
+    padding: 0;
+}
+
+.default-navigation :not(.widget_nav_menu) > div > ul.menu {
+    li.menu-item-type-vertical_ubermenu {
+        width: 231px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
     }
 }
 
 .jankx-integrate-ubermenu--vertical {
     display: none;
+    position: absolute;
+    top: 100%;
+    margin-left: -5px;
     &.show {
         display: block;
     }
@@ -18,12 +32,11 @@
         z-index: 99;
     }
 }
-
-.ubermenu-vertical .ubermenu-item > .ubermenu-submenu-type-mega {
-
-}
-
 @media(min-width: 998px) {
+    .default-navigation :not(.widget_nav_menu) > ul.menu .jankx-integrate-ubermenu--vertical li{
+        padding: 0 !important;
+    }
+
     .ubermenu-force-show {
         .jankx-integrate-ubermenu--vertical {
             display: block;
@@ -31,6 +44,7 @@
     }
     .jankx-integrate-ubermenu--vertical .ubermenu .ubermenu-nav {
         width: 230px;
+        box-shadow: 2px 0 4px 0 rgba(0,0,0,.2);
       }
 
       /* This rules for Elementor plugin */

@@ -2,7 +2,7 @@
     // When DOM document is ready
     window.addEventListener('DOMContentLoaded', function () {
         var toogleMenuItem = document.querySelector('.menu-item-type-vertical_ubermenu');
-        var ubermenuItem = document.querySelector('body:not(.ubermenu-force-show) .jankx-integrate-ubermenu--vertical');
+        var ubermenuItem = document.querySelector('.jankx-integrate-ubermenu--vertical');
         if (toogleMenuItem && ubermenuItem) {
             toogleMenuItem.addEventListener('mouseover', function() {
                 if (ubermenuItem.classList) {
