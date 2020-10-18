@@ -2,6 +2,7 @@
 namespace Jankx\Plugin\Integration\Plugins;
 
 use Jankx\Plugin\Integration\PluginIntegrationManager;
+use Jankx\Plugin\Integration\IntegrateTemplate;
 
 class UberMenu
 {
@@ -52,18 +53,14 @@ class UberMenu
     public function renderMenuItem($item_output, $item, $depth, $args)
     {
         if ($item->type === static::VERTICAL_ITEM_TYPE) {
-            add_action('jankx_template_after_header', array($this, 'renderUberMenuAfterHeader'), 31);
-
-            $item_output = ubermenu_toggle('jankx-ubermenu-vertical-menu', 'main', false, array(
-                'icon_class' => 'rocket',
-                'toggle_id' => 'ubermenu-main-2064-vertical_menu-2'
-            ));
+            $item_output .= $this->renderUberMenuVerticalOrientation();
         }
         return $item_output;
     }
 
-    public function renderUberMenuAfterHeader()
+    public function renderUberMenuVerticalOrientation()
     {
+        ob_start();
         echo '<div class="jankx-integrate-ubermenu--vertical">';
 
         jankx_open_container();
@@ -77,7 +74,14 @@ class UberMenu
 
         echo '</div>';
 
-        execute_script('');
+        $verticalMenuContent = ob_get_clean();
+
+        // Make the javascript to hover to show
+        execute_script(
+            IntegrateTemplate::render('ubermenu/show-menu-script', array(), null, false)
+        );
+
+        return $verticalMenuContent;
     }
 
     protected function hasVerticalMenuItem()
