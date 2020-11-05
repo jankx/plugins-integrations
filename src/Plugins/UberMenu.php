@@ -21,8 +21,7 @@ class UberMenu
 
             add_filter('body_class', array($this, 'appendOpenVerticalMenuClass'));
         }
-
-        add_action('jankx_template_css_dependences', array($this, 'registerAssets'));
+        add_action('jankx_asset_css_dependences', array($this, 'registerAssets'));
     }
 
     public function registerNewMenuLocations($menus)
