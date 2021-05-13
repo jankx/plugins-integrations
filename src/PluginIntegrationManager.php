@@ -1,7 +1,7 @@
 <?php
-namespace Jankx\Plugin\Integration;
+namespace Jankx\PluginsIntegrations;
 
-use Jankx\Plugin\Integration\Plugins\UberMenu;
+use Jankx\PluginsIntegrations\Plugins\UberMenu;
 
 class PluginIntegrationManager
 {

@@ -1,12 +1,14 @@
 <?php
-namespace Jankx\Plugin\Integration;
+namespace Jankx\PluginsIntegrations;
 
 use Jankx\Template\Template;
 
-class IntegrateTemplate {
+class IntegrateTemplate
+{
     protected static $templateLoader;
 
-    public static function getLoader() {
+    public static function getLoader()
+    {
         $defaultTemplateDir = sprintf('%s/templates', dirname(JANKX_PLUGIN_INTEGRATION_BUNDLES_LOADER));
         if (is_null(static::$templateLoader)) {
             static::$templateLoader = Template::getLoader(
@@ -18,7 +20,8 @@ class IntegrateTemplate {
         return static::$templateLoader;
     }
 
-    public static function render() {
+    public static function render()
+    {
         $args = func_get_args();
         return call_user_func_array(
             array(static::getLoader(), 'render'),

@@ -1,8 +1,8 @@
 <?php
-namespace Jankx\Plugin\Integration\Plugins;
+namespace Jankx\PluginsIntegrations\Plugins;
 
-use Jankx\Plugin\Integration\PluginIntegrationManager;
-use Jankx\Plugin\Integration\IntegrateTemplate;
+use Jankx\PluginsIntegrations\PluginIntegrationManager;
+use Jankx\PluginsIntegrations\IntegrateTemplate;
 
 class UberMenu
 {

@@ -16,10 +16,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Jankx\\Plugin\\Integration\\": "src/"
+            "Jankx\\PluginsIntegrations\\": "src/"
         },
         "files": [
-            "./jankx-plugins-integrations.php"
+            "./plugins-integrations.php"
         ]
     }
 }

@@ -10,7 +10,7 @@
 
 define('JANKX_PLUGIN_INTEGRATION_BUNDLES_LOADER', __FILE__);
 
-use Jankx\Plugin\Integration\PluginIntegrationManager;
+use Jankx\PluginsIntegrations\PluginIntegrationManager;
 
 if (!class_exists(PluginIntegrationManager::class)) {
     $composerAutoloader = sprintf('%s/vendor/autoload.php');
@@ -20,7 +20,8 @@ if (!class_exists(PluginIntegrationManager::class)) {
 }
 
 if (!function_exists('jankx_plugins_inegrations')) {
-    function jankx_plugins_inegrations() {
+    function jankx_plugins_inegrations()
+    {
         return PluginIntegrationManager::getInstance();
     }
 }
